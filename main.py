@@ -15,7 +15,6 @@ PLAYER = pygame.image.load(os.path.join("imgs" , "line.png"))
 
 BG = pygame.transform.scale(pygame.image.load(os.path.join("imgs" , "bg.png")) , (WIDTH,HEIGHT + 130))
 
-#_______________________________________________
 
 class Player:
     def __init__(self, x, y):
@@ -33,7 +32,6 @@ class Player:
     def get_height(self): 
         return self.player_img.get_height() 
 
-#_______________________________________________
 
 class Egg:
     def  __init__(self, x, y):
@@ -62,15 +60,12 @@ class Egg:
             if egg.collision(obj):
                 self.eggs.remove(egg)
 
-#_____________________________________________________
-
 def collide(obj1 , obj2):
     offset_x = obj2.x - obj1.x
     offset_y = obj2.y - obj1.y
 
     return obj1.mask.overlap(obj2.mask, (offset_x , offset_y)) != None
 
-#main___________________________________________
 
 def main():
     run = True
